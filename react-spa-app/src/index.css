@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html{
+  width: 100%;
+  height: 100%;
+  background-color: #ededed;
+}
+
+#container {
+  background-color: black;
+}
+
+a {
+	color: black;
+}
+
+a:link {
+	/* Uses to remove link color and more */
+  	text-decoration: none;
+}
+
+a:visited {
+	/* Uses to remove link color and more */
+  	text-decoration: none;
+}
+
+a:hover {
+	/* Uses to remove link color and more */
+  	cursor: pointer;
+}
+
+a:active {
+	/* Uses to remove link color and more */
+  	text-decoration: underline;
+}
