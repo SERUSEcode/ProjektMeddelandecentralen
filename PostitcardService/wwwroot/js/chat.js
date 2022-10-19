@@ -9,9 +9,9 @@ connection.on("ReceiveMessage", function (room, message) {
 
     var newP = document.createElement("p");
     var node = document.createTextNode(`ID: ${room} och ${message}.`);
-    newP.appendChild(node);
+    newP.prepend(node);
 
-    document.getElementById("printText").appendChild(newP);
+    document.getElementById("printText").prepend(newP);
 
     // var li = document.createElement("li");
     // document.getElementById("messagesList").appendChild(li);
@@ -65,9 +65,10 @@ async function PrintAllPostitcards() {
     //     console.log(card);
     // });
     
-    for (let i = 0; i < data.length; i++) {
+    for (let i = data.length - 1; i >= 0; i--) {
+        console.log(data.length);
         const newP = document.createElement("p");
-        const node = document.createTextNode(`ID: ${data[i].room} och ${data[i].message}.`);
+        const node = document.createTextNode(`ID: ${data[i].room} , ${data[i].message} }.`);
         newP.appendChild(node);
         
         document.getElementById("printText").appendChild(newP);
