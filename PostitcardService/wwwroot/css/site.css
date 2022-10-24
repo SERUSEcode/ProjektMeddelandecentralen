@@ -16,3 +16,18 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.printText {
+  
+}
+
+.card {
+  width: 75%;
+
+  border-radius: 10px;
+  border: 2px black solid;
+
+  padding: 10px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
