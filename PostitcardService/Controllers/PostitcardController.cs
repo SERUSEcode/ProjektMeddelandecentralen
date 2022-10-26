@@ -22,6 +22,14 @@ namespace PostitService.Controllers
             _context = context; 
         }
 
+        [HttpGet]
+        public IEnumerable<Postitcard> GetPostitcards() 
+        {
+            var postitcard = _context.Postitcard;
+
+            return postitcard;
+        }
+
         [HttpPost]
         [Route("AddCard")]
         public async Task<ActionResult<List<Postitcard>>> AddPostitcard(string room, string msg)
@@ -39,16 +47,8 @@ namespace PostitService.Controllers
             return Ok(postitcard);
         }
 
-        [HttpGet]
-        public IEnumerable<Postitcard> GetPostitcards() 
-        {
-            var postitcard = _context.Postitcard;
-
-            return postitcard;
-        }
-
         [HttpDelete("{id:int}")]
-        public async Task<ActionResult<Postitcard>> DeletePostitcard(int id)
+        public async Task<ActionResult<Postitcard>> DeletePostitcardById(int id)
         {
 
             var postitcard = new Postitcard()
@@ -60,27 +60,22 @@ namespace PostitService.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(postitcard);
-
-            // try
-            // {
-            //     var postitcardToDelete = await _context.Postitcard(id);
-
-            //     if (postitcardToDelete == null)
-            //     {
-            //         return NotFound($"Postitcard with id {id} was not found");
-            //     }
-
-            //     _context.Postitcard.Remove(id);
-            //     await _context.SaveChangesAsync();
-
-            //     return await postitcardToDelete.DeletePostitcard(id);
-            // }
-            // catch (System.Exception)
-            // {
-                
-            //     throw;
-            // }
         }
+
+        // [HttpDelete("{position:int}")]
+        // public async Task<ActionResult<Postitcard>> DeletePostitcardByPosition(int position)
+        // {
+
+        //     var postitcard = new Postitcard()
+        //     {
+        //         Id = position
+        //     };
+
+        //     _context.Postitcard.Remove(postitcard);
+        //     await _context.SaveChangesAsync();
+
+        //     return Ok(postitcard);
+        // }
 
     }
 }
