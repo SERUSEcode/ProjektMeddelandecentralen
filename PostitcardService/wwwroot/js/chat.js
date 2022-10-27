@@ -1,5 +1,6 @@
 "use strict";
 var messages;
+var newID;
 var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
 //Disable the send button until connection is established.
@@ -56,7 +57,7 @@ async function PrintAllPostitcards() {
         newButton.className = `removeCardButton`;
         newButton.id = messages[i].id;
         newButton.onclick = function() {
-            connection.invoke("RemoveMessage", messages[i].id).catch(function (err) {
+            connection.invoke("RemoveMessage", messages).catch(function (err) {
                 return console.error(err.toString());
             });;
         }
@@ -86,7 +87,9 @@ async function SaveDBPostitcard(room, message) {
     const options = {
         method: 'POST'
     };
-    await fetch(`https://localhost:7237/api/Postitcard/AddCard?room=${room}&msg=${message}`, options);
+    newID = await fetch(`https://localhost:7237/api/Postitcard/AddCard?room=${room}&msg=${message}`, options);
+
+    console.log(newID);
 }
 
 async function GetAllCards() {

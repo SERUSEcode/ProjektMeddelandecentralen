@@ -44,7 +44,7 @@ namespace PostitService.Controllers
             _context.Postitcard.Add(postitcard);
             await _context.SaveChangesAsync();
 
-            return Ok(postitcard);
+            return Ok("HERE I AM");
         }
 
         [HttpDelete("{id:int}")]

@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using PostitcardService.Models;
 using PostitcardService.Models.Postitcard;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace PostitcardService.hubs 
 {
@@ -23,17 +25,26 @@ namespace PostitcardService.hubs
             await Clients.All.SendAsync("ReceiveMessage", room, message);
         }
         
-        public async Task RemoveMessage(int id)
+        public async Task RemoveMessage(int item)
         {
+
+
+            // var result = await _context.Postitcard
+            // .Select((x, i) => new { item = x, index = i })
+            // .FirstOrDefaultAsync();
+
+            // _context.Postitcard.Remove(result);
+            // await _context.SaveChangesAsync();
+            // return result;
             var postitcard = new Postitcard()
             {
-                Id = id
+                Id = item
             };
 
             _context.Postitcard.Remove(postitcard);
             await _context.SaveChangesAsync();
 
-            await Clients.All.SendAsync("RemoveMessage", id);
+            // await Clients.All.SendAsync("RemoveMessage", id);
         }
 
         public async Task PrintAllCards()
