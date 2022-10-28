@@ -25,26 +25,18 @@ namespace PostitcardService.hubs
             await Clients.All.SendAsync("ReceiveMessage", room, message);
         }
         
-        public async Task RemoveMessage(int item)
+        public async Task RemoveMessage(int id)
         {
 
-
-            // var result = await _context.Postitcard
-            // .Select((x, i) => new { item = x, index = i })
-            // .FirstOrDefaultAsync();
-
-            // _context.Postitcard.Remove(result);
-            // await _context.SaveChangesAsync();
-            // return result;
             var postitcard = new Postitcard()
             {
-                Id = item
+                Id = id
             };
 
             _context.Postitcard.Remove(postitcard);
             await _context.SaveChangesAsync();
 
-            // await Clients.All.SendAsync("RemoveMessage", id);
+            await Clients.All.SendAsync("RemoveMessage", id);
         }
 
         public async Task PrintAllCards()

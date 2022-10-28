@@ -11,7 +11,7 @@ connection.on("RemoveMessage", async function (id) {
     messages = messages.filter(x => {
         return x.id != id;
     })
-    
+
     await PrintAllPostitcards();
 })
 
@@ -57,7 +57,7 @@ async function PrintAllPostitcards() {
         newButton.className = `removeCardButton`;
         newButton.id = messages[i].id;
         newButton.onclick = function() {
-            connection.invoke("RemoveMessage", messages).catch(function (err) {
+            connection.invoke("RemoveMessage", messages[i].id).catch(async function (err) {
                 return console.error(err.toString());
             });;
         }
@@ -99,18 +99,10 @@ async function GetAllCards() {
     messages = data;
 }
 
-// async function RemoveCard (position) {
+// async function RemoveLocalPostitcard(id) {
+//     messages = messages.filter(x => {
+//         return x.id != id;
+//     })
 
-//     let data = GetAllCards();
-
-//     const index = data.indexOf(position);
-
-//     console.log(index);
-
-//     const options = {
-//         method: 'Delete'
-//     };
-//     fetch(`https://localhost:7237/api/Postitcard/${id}`, options);
-
-//     console.log(`The card ${id} was pressed`);
-// } 
+//     await PrintAllPostitcards();
+// }
