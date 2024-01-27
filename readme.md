@@ -1,9 +1,9 @@
 -Starta porgramet
 
-1. Gå till mappen "PostitcardService"
-2. Kör commando "dotnet watch run"
-3. Gå till webbadressen "https://localhost:7237/index.html"
-4. Redo att användas!
+1. Go to folder "PostitcardService"
+2. Run command "dotnet watch run" in a terminal, example "Git bash" 
+3. Go to webbadress "https://localhost:7237/index.html"
+4. Ready to bu used
 
 Jag har kommit fram till att vd:n's tredje lösning är den bästa. Alltså att skapa en tiwtter liknande lösning. 
 Ideen är att man skapar kort. I varje kort så står det vad som behövs göras och vilket rum det behövs göras i. När ett kort skapas så skapas kortet för alla, utan att behöva uppdatera.
