@@ -1,14 +1,13 @@
--Starta porgramet
+- Start the program
+1. Navigate to the "PostitcardService" folder
+3. Execute the command "dotnet watch run" in a terminal, for example "Git bash"
+4. Go to the web address "https://localhost:7237/index.html"
+5. Ready to be used
 
-1. Go to folder "PostitcardService"
-2. Run command "dotnet watch run" in a terminal, example "Git bash" 
-3. Go to webbadress "https://localhost:7237/index.html"
-4. Ready to bu used
+--Assignment conclusion--
+I have concluded that the CEO's third solution is the best. That is, to create a Twitter-like solution. The idea is to create cards. Each card contains what needs to be done and in which room it needs to be done. When a card is created, it is created for everyone, without the need for updates. Additionally, I have added more features:
 
-Jag har kommit fram till att vd:n's tredje lösning är den bästa. Alltså att skapa en tiwtter liknande lösning. 
-Ideen är att man skapar kort. I varje kort så står det vad som behövs göras och vilket rum det behövs göras i. När ett kort skapas så skapas kortet för alla, utan att behöva uppdatera.
-Även så har jag laggt till fler funktioner:
-- Det ska gå att kommentera på korten. Så man enkelt kan ställa frågor och få svar. Så man slipper att ringa runt i personalen. 
-- Det ska gå att tjärnmärka korten. Vilket gör så att ddet tjärnmärkta kortet kommer till toppen av listan. Även när kortet blir tjärnmärk så blir kortet tjärnmärk för alla. Så man enkelt kan ge ut viktigt information.
-- Det ska gå att söka på korten. Då kommer man sök emot rubiken av korten. Allså rumens namn. 
-- Vem som helst kommer kunna redigera och ta bort kort. Detta är gjort för att det inte finns någon autentisering. 
+-It should be possible to comment on the cards. So you can easily ask questions and get answers, eliminating the need to call around to the staff.
+-It should be possible to tag the cards. Tagging a card will make it appear at the top of the list. Also, when a card is tagged, it is tagged for everyone, so you can easily disseminate important information.
+-It should be possible to search the cards. This will search based on the titles of the cards, i.e., the room names.
+-Anyone will be able to edit and delete cards. This is done because there is no authentication system in place.
